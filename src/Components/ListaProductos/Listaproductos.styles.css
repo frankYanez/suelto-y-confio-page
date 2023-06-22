@@ -1,0 +1,7 @@
+.contenedor-cards{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    background-image: url(../../assets/circle-background.png);
+}
+

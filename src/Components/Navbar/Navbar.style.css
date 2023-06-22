@@ -1,0 +1,66 @@
+.navbar{
+    background-image: url(public/assets/bg-nav.png);
+    background-position: bottom;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-cart{
+    display: flex;
+    align-items: center;
+}
+
+.icon-cart{
+    max-width: 32px;
+}
+
+.icon{
+    font-family: 'Lobster', cursive;
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:white;
+}
+
+.navbar a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.hamburger{
+    display: none;
+}
+
+.links{
+    display: flex;
+}
+
+/* @media (width < 460px) {
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+    }
+
+    .links{
+        height: 450px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: white;
+    }
+} */

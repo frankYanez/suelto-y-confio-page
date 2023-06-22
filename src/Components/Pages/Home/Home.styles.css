@@ -1,0 +1,36 @@
+.section-info{
+    flex-direction: column;
+    gap: 50px;
+}
+.section-welcome{
+    max-width: 40%;
+}
+.section-welcome h2{
+    font-size: 40px;
+}
+
+.bg{
+    background-image: url(public/assets/circle-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.contenedor-principal{
+    padding: 100px 0;
+    justify-content: space-around;
+}
+
+
+@media (max-width: 420px) {
+    .contenedor-principal{
+        padding: 20px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .section-welcome{
+        max-width: 100%;
+        /* justify-content: center; */
+        text-align: center;
+    }
+  }

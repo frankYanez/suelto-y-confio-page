@@ -1,0 +1,18 @@
+.card-container{
+    position: relative;
+}
+
+.card-content__nosotros{
+    display: inline-block;
+    flex-direction: column;
+    z-index: -10;
+}
+
+.img-card__nosotros{
+    position: absolute;
+    z-index: 10;
+    top: -40px;
+    left: -15px;
+    border-radius: 50%;
+    
+}

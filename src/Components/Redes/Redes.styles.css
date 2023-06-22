@@ -1,0 +1,23 @@
+.contenedor-redes{
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+}
+
+.logo-red{
+    max-width: 30px;
+}
+
+.link{
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.link:hover{
+    color: rgb(63, 60, 60);
+    filter: opacity(0.5);
+
+}

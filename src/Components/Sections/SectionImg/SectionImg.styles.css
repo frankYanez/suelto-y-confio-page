@@ -1,0 +1,19 @@
+.section-img{
+    background-color: #29646D;
+    padding: 100px 0;
+    
+}
+
+.contenedor{
+    justify-content: space-around;
+}
+
+.section-img__img{
+    width: 100%;
+}
+
+.card-carousel{
+    max-width: 300px;
+    border: 8px solid white;
+    border-radius: 10px;
+}
