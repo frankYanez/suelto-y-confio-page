@@ -17,7 +17,7 @@ const CarritoPage = () => {
         <section className="contenedor-carrito">
           
           {
-            cart.length == 0 ? <h2>Tu carrito esta vacio</h2> : cart.map( item => <InfoCalidad key={item.id} eliminar detalle item={item}/>)
+            cart && cart?.length == 0 ? <h2>Tu carrito esta vacio</h2> : cart.map( item => <InfoCalidad key={item.id} eliminar detalle item={item}/>)
           }
 
 
@@ -25,7 +25,7 @@ const CarritoPage = () => {
               cart.length == 0 ?<><Link to='/productos'> <button className="button">Agrega tus productos</button></Link> 
               </>
              :<>  <Link to='/form'><button className="button">Generar orden</button></Link> 
-             <button className="button" onClick={()=> clearCart()}>Vaciar Carrito</button>
+             <button className="button" onClick={clearCart}>Vaciar Carrito</button>
               </>
              }
             

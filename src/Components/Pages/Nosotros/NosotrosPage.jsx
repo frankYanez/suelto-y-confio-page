@@ -1,26 +1,23 @@
-
 import CardNosotros from "../../CardNosotros/CardNosotros"
-import './NosotrosPage.styles.css'
-
-
+import Carousel from "../../Carousel/Carousel"
 const NosotrosPage = () => {
 
     const lideres = [{
         nombre: 'Lucia',
         cargo: 'Lider de Ventas',
         descripcion: 'Mi nombre es Lucia, encargada de la parte de ventas del local desde hace mas de 4 años. Responsable de los envios diarios que nos llegan a traves de nuestras redes. Desde que me uni a esta empresa familiar',
-        img:'https://randomuser.me/api/portraits/women/87.jpg'
+        img:'/assets/lucia-card.png'
       },
       {
         nombre: 'Valeria',
         cargo: 'Lider y CEO',
         descripcion: 'Mi nombre es Valeria, fundadora de este maravilloso lugar hace mas de 10 años. Hoy, encargada de la atencion al publico en nuestra sucursal y de la adquisicion de nuevos proveedores para la satisfaccion de nuestros clientes con productos de calidad',
-        img: 'https://randomuser.me/api/portraits/women/76.jpg'
+        img: '/assets/valeria-card.png'
       }
     ]
   return (
     <div className="nosotros" >
-        
+        <img className="xl:w-12/12 xl:h-12" src="/assets/banner-syc.png" alt="" />
           <section className="flex flex-col items-center justify-center mx-auto my-10 text-justify w-9/12">
 
           <aside>
@@ -35,7 +32,7 @@ const NosotrosPage = () => {
             
           </aside>
          
-         <h1 className="text-5xl my-40"> <span className="text-emerald-400 font-extrabold italic w-96">"</span> Soltá y Confiá en nosotras<span className="text-emerald-400 w-96 font-extrabold italic">"</span></h1>
+         <h1 className="text-2xl my-24 xl:text-5xl"> <span className="text-emerald-400 font-extrabold italic text-xl xl:text-4xl">"</span>Soltá y Confiá en nosotras<span className="text-emerald-400 text-xl font-extrabold italic xl:text-4xl">"</span></h1>
           </section>
             <article className="w-9/12 mx-auto lg:flex">
         {
@@ -43,7 +40,7 @@ const NosotrosPage = () => {
         }
          </article>
        
-       
+       <Carousel/>
     </div>
   )
 }

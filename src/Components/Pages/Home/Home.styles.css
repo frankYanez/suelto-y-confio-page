@@ -10,7 +10,7 @@
 }
 
 .bg{
-    background-image: url(public/assets/circle-background.png);
+    background-image: url(/assets/circle-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;

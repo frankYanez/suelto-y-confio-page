@@ -5,17 +5,17 @@ const Redes = () => {
     const redes = [
         {
             link: 'https://www.facebook.com/profile.php?id=100065259391616',
-            logo: "../../src/assets/logo-facebook.png",
+            logo: "/assets/logo-facebook.png",
             nombre: 'Facebook'
         },
         {
             link: 'https://www.facebook.com/profile.php?id=100065259391616',
-            logo: "../../../src/assets/logo-instagram.png",
+            logo: "/assets/logo-instagram.png",
             nombre: 'Instagram'
         },
         {
             link: 'https://www.facebook.com/profile.php?id=100065259391616',
-            logo: "../../../src/assets/logo-whatsapp.png",
+            logo: "/assets/logo-whatsapp.png",
             nombre: 'WhatsApp'
         }
     ]

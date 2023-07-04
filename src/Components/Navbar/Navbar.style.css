@@ -1,11 +1,13 @@
 .navbar{
-    background-image: url(public/assets/bg-nav.png);
+    background-image: url(/assets/bg-nav.png);
     background-position: bottom;
     background-size: cover;
     width: 100%;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .container-cart{
@@ -41,7 +43,12 @@
     display: flex;
 }
 
-/* @media (width < 460px) {
+.links a{
+    display: block;
+    
+}
+
+@media (width < 460px) {
     .hamburger{
         display: block;
         cursor: pointer;
@@ -55,12 +62,37 @@
     }
 
     .links{
-        height: 450px;
+        height: 350px;
         position: absolute;
-        top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        top: 50px;
         left: 0;
         right: 0;
         width: 100vw;
-        background-color: white;
+        background-image: url(/assets/bg-nav.png);
+        background-position: bottom;
+        opacity: 0;
+        transition: 1s;
+        overflow: hidden;
     }
-} */
+    
+    .links.active{
+        opacity: 1;
+    }
+
+    .navbar{
+        position: absolute;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        z-index: 100;
+        
+        
+    }
+}

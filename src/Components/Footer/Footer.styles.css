@@ -5,26 +5,7 @@ footer{
     background-size: cover;
     /* padding: 50px; */
 }
-footer h3{
-    font-size: 40px;
-    color: white;
-    font-family: 'Lobster', cursive;
-    -webkit-text-stroke: 1px black;
-}
-
-.content-list{
-    width: 100%;
-    justify-content: space-evenly;
-}
 
 
-/* @media (max-width: 420px) {
-    footer{
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-    }
-    footer h3{
-        font-size: 30px;
-    }
-} */
+
+

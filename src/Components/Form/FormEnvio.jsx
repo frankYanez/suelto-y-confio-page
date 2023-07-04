@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './Form.styles.css'
 import { useCartContext } from '../../context/CartContext'
 import sendMesagge from '../../Functions/SendMesagge'
+import { createMessage } from '../../Functions/createMessage'
 
 
 const Form = () => {
@@ -17,7 +18,7 @@ const Form = () => {
     //     }
     // })
 
-    
+    const pedido = []
     const handleChange = (e) => {
       e.preventDefault()
        const user = {
@@ -26,10 +27,14 @@ const Form = () => {
         phone,
        }
 
-       console.log(user);
-       console.log(cart);
-       const pedido ={ ...user, ...cart}
-       sendMesagge(pedido)
+       cart.map( item => {
+        const obj = `${item.nombre}:${item.cantidad}`
+        pedido.push(obj)
+       })
+
+       
+      // createMessage(user,cart)
+       sendMesagge(user,pedido)
 
        
 

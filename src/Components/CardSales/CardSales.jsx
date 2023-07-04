@@ -1,5 +1,6 @@
 import './CardSale.styles.css'
 
+
 const CardSales = () => {
     const sales = [
         {
@@ -49,16 +50,20 @@ const CardSales = () => {
         }
     ]
   return (
-    <div className='flex flex-col items-center xl:flex-row xl:justify-center my-14 bg-'>
+    <div className='flex flex-col gap-6 items-center  xl:flex-row justify-center my-14 bg-'>
+        
+        
+        
         {
             sales.map( (sale, i) => 
-                <div className="p-6 flex flex-col gap-6 items-center w-72 card " key={i}>
-                    <h2 className="font-bold text-4xl ">{sale.price}</h2>
+            <div className="w-64 p-6 flex relative flex-col gap-6 items-center xl:w-72 card " key={i}>
+                    <img className='w-16 absolute rotate-12 -top-4 right-0 object-contain sale' src="/assets/sale.png" alt="" />
+                    <h3 className="font-bold text-4xl ">{sale.price}</h3>
                     <h3>{sale.name}</h3>
                     <div className="" >
                     {sale.checks.map((check,i) =>
 
-                        <p key={i} className="flex justify-start my-2"> <img className="w-4 object-contain" src="/src/assets/check.png" alt="" /> {check.description}</p>)}
+                        <p key={i} className="flex justify-start my-2"> <img className="w-4 object-contain" src="/assets/check.png" alt="" /> {check.description}</p>)}
                     </div>
                 </div>
 

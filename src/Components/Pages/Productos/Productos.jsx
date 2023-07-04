@@ -7,20 +7,14 @@ const ProductosPage = () => {
 
   const [categoria, setCategoria] = useState('todos');
 
-  // console.log(categoria);
-  // const getProductos = ()=>{ refresh()
-  // }
-
-  // const productos = getProductos()
+  console.log('render page');
   return (
-    <div >
-      <div className="h-12 my-2 bg-slate-950">
-
-      </div>
+    <div className="text-center" >
+      
       <h2 className="title text-center">Selecciona tus productos</h2>
-      <div  className="w-6/12 my-4 mx-auto">
+      
       <SelectSmall  categoria={categoria} setCategoria={setCategoria} />
-      </div>
+      
       <Listaproductos value={categoria} />
     </div>
   )

@@ -1,59 +1,50 @@
-import { collection, getDocs, query, where } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import './Listaproductos.styles.css'
-import { db } from "../../firebase/config"
 import Loading from "../Loading/Loading"
 import CardProduct from "../Card/Card"
+import obtenerDocs from "../../Functions/obtenerDocs"
+import { obtenerFiltrados } from "../../Functions/obtenerFiltrados"
 
 
 
 
 const Listaproductos = ({value}) => {
-  
-  const [productos , setProductos] = useState([])
-  const [ loading , setLoading] = useState(true)
 
- useEffect(()=>{
-  
-  if (value == 'todos'){
-    getAllProducts()
-  }else{
-    productsQuery(value)
-  }
- },[value])
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
+    
+    
 
-const productsQuery = async (valor)=> {
-  const queryCollection = collection(db, 'productos')
-  const queryFilter = query(queryCollection, where('categoria' , '==' , `${valor}`))
+    console.log('render lista productos');
+    
+    useEffect(() => {
 
-  await getDocs(queryFilter)
-  .then( data => setProductos(data.docs.map( doc => ({id: doc.id, ...doc.data()}))))
-  .catch( err => console.log(err))
-  .finally(setLoading(false))
-}
- const getAllProducts = async ()=>{
-  const queryCollection = collection(db, 'productos')
-  await getDocs(queryCollection)
-  .then(d => setProductos( d.docs.map(doc =>({id: doc.id,  ...doc.data()}))))
-  .catch( err => console.log(err))
-  .finally( setLoading(false))
- }
+        if (value == 'todos') {
+            obtenerDocs()
+                .then(data => setProductos(data))
+                .finally(setLoading(false))
 
-
-  return (
-    <>
-      
-        <div className="contenedor-cards d-flex">
-      {
-          loading ? <Loading/> :
-          productos.map( prod => <CardProduct key={prod.id} producto={prod} />)
+        } else {
+            obtenerFiltrados(value)
+                .then(data => setProductos(data))
         }
+       }, [value])
 
-        </div>
-      
-       
-    </>
-  )
+    return (
+        <>
+
+            <div className="contenedor-cards d-flex">
+                {
+                    
+                    loading ? <Loading /> :
+                        productos.map(prod => <CardProduct key={prod.id} nombre={prod.nombre} precio={prod.precio} categoria={prod.categoria} img={prod.img} />)
+                }
+            </div>
+
+
+        </>
+    )
 }
+
 
 export default Listaproductos

@@ -1,0 +1,16 @@
+.sale{
+    animation: animate 2s infinite ;
+    transition: all 2s;
+}
+
+@keyframes animate {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.1;
+    }
+    100%{
+        scale: 1;
+    }
+}

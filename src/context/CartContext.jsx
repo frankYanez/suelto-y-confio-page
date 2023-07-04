@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 //Creamos el contexto
 const CartContext = createContext([])
@@ -9,11 +9,10 @@ export const useCartContext = () => useContext(CartContext)
 //Este es el COMPONENTE que recibe children que sera todo lo que envuelva
 const CartcontextProvider = ({ children }) => {
 
-  
   const [cart, setCart] = useState([])
 
-
   const addToCart = (producto) => {
+
     const find = cart.find(ele => ele.id == producto.id)
 
     if (find) {
@@ -27,17 +26,18 @@ const CartcontextProvider = ({ children }) => {
         } else {
           return item
         }
-        })
+      })
 
-          setCart(updateCart)
-        } else {
-          setCart([...cart, producto])
-        }
-       
-      }
+      setCart(updateCart)
+    } else {
+      setCart([...cart, producto])
+    }
+  }
+
+
 
   const deleteProduct = (id) => {
-    const updateCart = cart.filter( item => item.id != id)
+    const updateCart = cart.filter(item => item.id != id)
 
     setCart(updateCart);
   }
@@ -48,12 +48,11 @@ const CartcontextProvider = ({ children }) => {
   return (
 
     <CartContext.Provider value={{
-      cart,
       addToCart,
       deleteProduct,
       clearCart,
-      setCart
-
+      setCart,
+      cart
     }}>
       {children}
     </CartContext.Provider>

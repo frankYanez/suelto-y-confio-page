@@ -1,12 +1,12 @@
-import sendMessage from "../twilio/twilio-config"
 
-export const createMessage = async(order,user) => {
+export const createMessage = (user, order) => {
 
-    try {
-        const message = `*Pedido*: ${order} de *${user}`
-            sendMessage(message) 
-    } catch (error) {
-        console.log(error);
-    }
     
+    let orderString =  JSON.stringify(order);
+    const texto = orderString.replace(/["'{}]/g, '')
+    
+    const text = `Hola mi nombre es ${user.name} y quiero un pedido a la direccion ${user.address} con: ${texto} `
+
+    return text;
+   
 }
