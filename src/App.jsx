@@ -11,12 +11,16 @@ import CartcontextProvider from "./context/CartContext";
 import CarritoPage from "./Components/Pages/Carrito/CarritoPage";
 import FormEnvio from "./Components/Form/FormEnvio"
 import { ToastContainer, toast } from 'react-toastify';
+import { useEffect, useState } from "react";
 
 
 function App() {
+  const [hamburger, setHamburger] = useState(false)
+  
   
   return (
     <div className="app">
+     
       <CartcontextProvider>
 
       <ToastContainer
@@ -32,7 +36,7 @@ function App() {
         pauseOnHover={false}
         theme="dark" />
 
-      <Navbar/>
+      <Navbar hamburger={hamburger} setHamburger={setHamburger}/>
       
       <Routes>
         <Route path="/" home element={<Home/>}/>

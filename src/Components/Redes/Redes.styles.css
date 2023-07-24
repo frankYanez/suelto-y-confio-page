@@ -1,12 +1,3 @@
-.contenedor-redes{
-    flex-direction: column;
-    gap: 40px;
-    justify-content: center;
-}
-
-.logo-red{
-    max-width: 30px;
-}
 
 .link{
     justify-content: center;

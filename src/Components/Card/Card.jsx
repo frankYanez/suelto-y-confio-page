@@ -9,14 +9,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const CardProduct = (props) => {
-    const { nombre, precio, categoria, img } = props
-    const [count, setCount] = useState(1)
+    const { nombre, precio, categoria, img ,id} = props
+    const [cantidad, setCantidad] = useState(1)
 
     const { addToCart } = useCartContext()
 
-    const notify = () => toast('🦄 Wow so easy!', {
+    const notify = () => toast('🛒 Producto Añadido', {
         position: "top-right",
-        autoClose: 4000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -25,47 +25,35 @@ const CardProduct = (props) => {
         theme: "light",
     });
     
-    if (count == 0) {
-        setCount(1)
+    if (cantidad == 0) {
+        setCantidad(1)
     }
 
     const product = {
+        id,
         nombre,
         precio,
         categoria,
         img,
-        count
+        cantidad : cantidad
     }
 
-    useEffect(() => {
-        console.log("render card");
-    }, [count])
+    
+    
 
 
     return (
         <div className="card">
             <div className='flex flex-col justify-center  items-center'>
-                <img className='w-3/5 max-h-48' src={img} alt="" />
+                <img className='w-3/5 max-h-48' src={img} alt="imagen del producto" />
                 <div className='content'>
                     <h2>{nombre}</h2>
                     <h3>{precio}</h3>
-                    {
-                        categoria == "suelto" ? <Contador suelto count={count} setCount={setCount} /> : <Contador count={count} setCount={setCount} />
-                    }
+                    <Contador cantidad={cantidad} setCantidad={setCantidad} categoria={categoria}/>
+                    
 
                     <button onClick={() => {addToCart(product), notify()}} className='button'>Comprar</button>
-                    {/* <ToastContainer
-                        position="top-right"
-                        autoClose={4000}
-                        limit={1}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover={false}
-                        theme="dark" /> */}
+                   
                 </div>
             </div>
         </div>

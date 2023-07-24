@@ -3,7 +3,6 @@ import { useState } from 'react'
 import './Form.styles.css'
 import { useCartContext } from '../../context/CartContext'
 import sendMesagge from '../../Functions/SendMesagge'
-import { createMessage } from '../../Functions/createMessage'
 
 
 const Form = () => {
@@ -11,16 +10,11 @@ const Form = () => {
     const [ name , setName ] = useState('')
     const [ address , setAddres ] = useState('')
     const [ phone , setPhone ] = useState('')
-    // const [ errors , setErrors] = useState({
-    //     name: {
-    //         error : false,
-    //         mesegge: 'Al menos 3 caracteres'
-    //     }
-    // })
-
-    const pedido = []
+  
+    
     const handleChange = (e) => {
       e.preventDefault()
+      const pedido = []
        const user = {
         name,
         address,
@@ -28,29 +22,14 @@ const Form = () => {
        }
 
        cart.map( item => {
-        const obj = `${item.nombre}:${item.cantidad}`
+        const obj = `${item.nombre}: ${item.cantidad} x`
         pedido.push(obj)
        })
-
-       
-      // createMessage(user,cart)
        sendMesagge(user,pedido)
 
        
 
     }
-    
-    // const validarNombre = (nombre) => {
-    //  console.log(errors.name.error);   
-    //     if( nombre.length < 3){
-    //         return { name: {error: true , mesegge : 'putito'}}
-    //     }else{
-    //         return { name: {error: false , mesegge : ''}}
-    //     }
- 
-    // }
- 
-    
     
   return (
     <form onSubmit={handleChange} className="form mx-auto py-24">
@@ -68,7 +47,7 @@ const Form = () => {
     </label> 
         
     <label>
-        <input onChange={(e)=>setPhone(e.target.value)} value={phone}   type="number" className="input"/>
+        <input onChange={(e)=>setPhone(e.target.value)} value={phone}   type="tel" className="input"/>
         <span>Telefono</span>
     </label>
     

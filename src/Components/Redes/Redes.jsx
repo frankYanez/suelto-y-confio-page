@@ -23,8 +23,8 @@ const Redes = () => {
     <div className='flex justify-center gap-6 mx-0' >
 
        {
-        redes.map( red => <Link to={red.link} className='d-flex link' key={red.nombre}>
-            <img className='logo-red' src={red.logo} alt=''/>
+        redes.map( red => <Link to={red.link} className='xl:flex xl:gap-1' key={red.nombre}>
+            <img className='xl:w-6 ' src={red.logo} alt=''/>
             <h4>{red.nombre}</h4>
         </Link>)
        }

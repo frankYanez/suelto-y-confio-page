@@ -15,7 +15,7 @@ const Listaproductos = ({value}) => {
     
     
 
-    console.log('render lista productos');
+    //TODO: paginacion
     
     useEffect(() => {
 
@@ -24,12 +24,13 @@ const Listaproductos = ({value}) => {
                 .then(data => setProductos(data))
                 .finally(setLoading(false))
 
-        } else {
+            } else {
             obtenerFiltrados(value)
-                .then(data => setProductos(data))
+            .then(data => setProductos(data))
         }
-       }, [value])
-
+    }, [value])
+    
+    
     return (
         <>
 
@@ -37,7 +38,7 @@ const Listaproductos = ({value}) => {
                 {
                     
                     loading ? <Loading /> :
-                        productos.map(prod => <CardProduct key={prod.id} nombre={prod.nombre} precio={prod.precio} categoria={prod.categoria} img={prod.img} />)
+                        productos.map(prod => <CardProduct key={prod.id} id={prod.id} nombre={prod.nombre} precio={prod.precio} categoria={prod.categoria} img={prod.img} />)
                 }
             </div>
 

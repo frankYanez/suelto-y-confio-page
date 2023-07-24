@@ -1,5 +1,7 @@
 .navbar{
-    background-image: url(/assets/bg-nav.png);
+    position: absolute;
+    background: transparent;
+    /* background-image: url(/assets/bg-nav.png); */
     background-position: bottom;
     background-size: cover;
     width: 100%;
@@ -62,7 +64,7 @@
     }
 
     .links{
-        height: 350px;
+        height: 5px;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -73,15 +75,22 @@
         left: 0;
         right: 0;
         width: 100vw;
-        background-image: url(/assets/bg-nav.png);
+        /* background-image: url(/assets/bg-nav.png); */
         background-position: bottom;
         opacity: 0;
         transition: 1s;
-        overflow: hidden;
+        
     }
+
+    .links a {
+        z-index: -100;
+    }
+   
     
     .links.active{
+        height: 300px;
         opacity: 1;
+        z-index: 100;
     }
 
     .navbar{
@@ -91,7 +100,7 @@
         left: 0;
         right: 0;
         width: 100vw;
-        z-index: 100;
+        z-index: 1000;
         
         
     }

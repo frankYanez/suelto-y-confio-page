@@ -7,7 +7,6 @@ const ProductosPage = () => {
 
   const [categoria, setCategoria] = useState('todos');
 
-  console.log('render page');
   return (
     <div className="text-center" >
       

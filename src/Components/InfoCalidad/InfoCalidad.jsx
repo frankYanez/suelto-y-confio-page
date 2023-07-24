@@ -11,7 +11,7 @@ const InfoCalidad = ({item, detalle, eliminar}) => {
         <video className="w-20" loop autoPlay src={item.img} alt="" />
         <div className='info-content'>
             <h4 className='subtitle'>{item.nombre}</h4>
-            { detalle ?<>  <p>{item.count}</p> <button className={ eliminar && "button delete" } onClick={()=> deleteProduct(item.id)}>Eliminar</button> </> : <p>{item.descripcion}</p> }
+            { detalle ?<>  <p>{item.cantidad}</p> <button className={ eliminar && "button delete" } onClick={()=> deleteProduct(item.id)}>Eliminar</button> </> : <p>{item.descripcion}</p> }
         </div>
 
     </div>

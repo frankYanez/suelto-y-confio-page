@@ -7,6 +7,9 @@
     flex-direction: column;
     z-index: -10;
 }
+.shadow{
+    box-shadow: 75px 56px 19px 10px rgba(0,0,0,1);
+}
 
 .img-card__nosotros{
     position: absolute;

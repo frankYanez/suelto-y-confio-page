@@ -107,6 +107,11 @@ span{
   padding-bottom: 10px;
  }
 
+ .shadowBox{
+  box-shadow: 7px 6px 11px 6px rgba(0,0,0,0.3);
+
+ }
+
 
 
 

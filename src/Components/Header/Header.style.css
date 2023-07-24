@@ -12,5 +12,5 @@
 .hero{
   /* height: 80vh; */
   background: rgb(#00a9a5ff);
-  background: linear-gradient(270deg, rgb(31, 227, 201) 20%, rgba(255,255,255,0.26102941176470584) 65%);
+  background: linear-gradient(270deg, rgb(31, 198, 227) 20%, rgba(255,255,255,0.26102941176470584) 65%);
 }

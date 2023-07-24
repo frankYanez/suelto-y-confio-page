@@ -17,7 +17,7 @@ const NosotrosPage = () => {
     ]
   return (
     <div className="nosotros" >
-        <img className="xl:w-12/12 xl:h-12" src="/assets/banner-syc.png" alt="" />
+        <img className="w-12-12 h-auto xl:w-12/12 xl:h-12" src="/assets/banner-syc.png" alt="" />
           <section className="flex flex-col items-center justify-center mx-auto my-10 text-justify w-9/12">
 
           <aside>
