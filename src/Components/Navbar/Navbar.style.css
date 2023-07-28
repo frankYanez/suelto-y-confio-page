@@ -1,7 +1,8 @@
-.navbar{
+.navbar {
     position: absolute;
     background: transparent;
-    /* background-image: url(/assets/bg-nav.png); */
+    background-color: rgba(0, 0, 0, 0.5);
+    ;
     background-position: bottom;
     background-size: cover;
     width: 100%;
@@ -9,61 +10,61 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
-.container-cart{
+.container-cart {
     display: flex;
     align-items: center;
 }
 
-.icon-cart{
+.icon-cart {
     max-width: 32px;
 }
 
-.icon{
+.icon {
     font-family: 'Lobster', cursive;
     color: white;
     -webkit-text-stroke: 1px black;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
-    color:white;
+    color: white;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     font-weight: bold;
     text-decoration: underline;
 }
 
-.hamburger{
+.hamburger {
     display: none;
 }
 
-.links{
+.links {
     display: flex;
 }
 
-.links a{
+.links a {
     display: block;
-    
+
 }
 
 @media (width < 460px) {
-    .hamburger{
+    .hamburger {
         display: block;
         cursor: pointer;
     }
 
-    .hamburger .line{
+    .hamburger .line {
         width: 30px;
         height: 3px;
         background-color: white;
         margin: 6px 0;
     }
 
-    .links{
+    .links {
         height: 5px;
         position: absolute;
         display: flex;
@@ -79,21 +80,21 @@
         background-position: bottom;
         opacity: 0;
         transition: 1s;
-        
+
     }
 
     .links a {
         z-index: -100;
     }
-   
-    
-    .links.active{
+
+
+    .links.active {
         height: 300px;
         opacity: 1;
         z-index: 100;
     }
 
-    .navbar{
+    .navbar {
         position: absolute;
         position: fixed;
         top: 0;
@@ -101,7 +102,7 @@
         right: 0;
         width: 100vw;
         z-index: 1000;
-        
-        
+
+
     }
 }

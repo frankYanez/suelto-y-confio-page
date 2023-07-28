@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,41 +6,45 @@
 
 }
 
-h1,h2 {
+h1,
+h2 {
   font-family: 'Lobster', cursive;
 }
 
 
 
-h2{
+h2 {
   font-weight: bolder;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
 }
 
-p{
+p {
   font-weight: 500;
   font-size: 14px;
 }
 
-span{
+span {
   padding: 0 8px;
 }
 
-.title{
+.title {
   font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
   font-weight: bolder;
 }
 
-.subtitle{
+.subtitle {
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   font-weight: bolder;
 }
 
+.stroke {
+  -webkit-text-stroke: 1.2px black;
+}
 
 
 .button {
@@ -70,9 +74,9 @@ span{
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
- }
- 
- .button:after {
+}
+
+.button:after {
   background-clip: padding-box;
   background-color: #0b6354;
   border: solid transparent;
@@ -85,32 +89,33 @@ span{
   right: 0;
   top: 0;
   z-index: -1;
- }
- 
- .button:main, button:focus {
+}
+
+.button:main,
+button:focus {
   user-select: auto;
- }
- 
- .button:hover:not(:disabled) {
+}
+
+.button:hover:not(:disabled) {
   filter: brightness(1.2);
- }
- 
- .button:disabled {
+}
+
+.button:disabled {
   cursor: auto;
- }
- 
- .button:active:after {
+}
+
+.button:active:after {
   border-width: 0 0 0px;
- }
- 
- .button:active {
+}
+
+.button:active {
   padding-bottom: 10px;
- }
+}
 
- .shadowBox{
-  box-shadow: 7px 6px 11px 6px rgba(0,0,0,0.3);
+.shadowBox {
+  box-shadow: 7px 6px 11px 6px rgba(0, 0, 0, 0.3);
 
- }
+}
 
 
 

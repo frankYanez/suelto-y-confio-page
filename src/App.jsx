@@ -1,5 +1,5 @@
 import "./App.css";
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import NotFound from "./Components/404/NotFound";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Pages/Home/Home";
@@ -15,41 +15,46 @@ import { useEffect, useState } from "react";
 
 
 function App() {
-  const [hamburger, setHamburger] = useState(false)
-  
-  
+  const [hamburger, setHamburger] = useState(true)
+
+  const location = useLocation().pathname
+  useEffect(() => {
+
+    setHamburger(!hamburger)
+  }, [location])
+
   return (
     <div className="app">
-     
+
       <CartcontextProvider>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={4000}
-        limit={1}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="dark" />
+        <ToastContainer
+          position="top-right"
+          autoClose={4000}
+          limit={1}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+          theme="dark" />
 
-      <Navbar hamburger={hamburger} setHamburger={setHamburger}/>
-      
-      <Routes>
-        <Route path="/" home element={<Home/>}/>
-        <Route path="/productos"  element={<ProductosPage />}/>
-        <Route path="/nosotros" element={<NosotrosPage/>}/>
-        <Route path="/contacto" element={<ContactoPage/>}/>
-        <Route path="/carrito" element={<CarritoPage/>}/>
-        <Route path="/form" element={<FormEnvio/>}/>
+        <Navbar hamburger={hamburger} setHamburger={setHamburger} />
 
-        <Route path="*" element={<NotFound/>}/>
-        
-      </Routes>
-      <Footer className="p-10"/>
+        <Routes>
+          <Route path="/" home element={<Home />} />
+          <Route path="/productos" element={<ProductosPage />} />
+          <Route path="/nosotros" element={<NosotrosPage />} />
+          <Route path="/contacto" element={<ContactoPage />} />
+          <Route path="/carrito" element={<CarritoPage />} />
+          <Route path="/form" element={<FormEnvio />} />
+
+          <Route path="*" element={<NotFound />} />
+
+        </Routes>
+        <Footer className="p-10" />
       </CartcontextProvider>
     </div>
   );

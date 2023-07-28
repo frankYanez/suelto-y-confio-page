@@ -1,11 +1,7 @@
-footer{
-    
+footer {
+    color: white;
     background-image: url(../../assets/bg-footer.png);
     background-position: bottom;
     background-size: cover;
     /* padding: 50px; */
 }
-
-
-
-

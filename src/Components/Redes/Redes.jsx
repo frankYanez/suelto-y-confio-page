@@ -19,16 +19,16 @@ const Redes = () => {
             nombre: 'WhatsApp'
         }
     ]
-  return (
-    <div className='flex justify-center gap-6 mx-0' >
+    return (
+        <div className='flex justify-center gap-6 mx-0' >
 
-       {
-        redes.map( red => <Link to={red.link} className='xl:flex xl:gap-1' key={red.nombre}>
-            <img className='xl:w-6 ' src={red.logo} alt=''/>
-            <h4>{red.nombre}</h4>
-        </Link>)
-       }
-        {/* {
+            {
+                redes.map(red => <Link to={red.link} className='xl:flex xl:gap-1' key={red.nombre}>
+                    <img className='w-3/12 xl:w-6 ' src={red.logo} alt='' />
+                    <h4>{red.nombre}</h4>
+                </Link>)
+            }
+            {/* {
             redes.map( red => {
                 <Link to={red.link} className='d-flex'>
                 <img className='logo-red' src={red.logo} alt="" />
@@ -36,9 +36,9 @@ const Redes = () => {
                 </Link>
             })
         } */}
-                
-            </div>
-  )
+
+        </div>
+    )
 }
 
 export default Redes

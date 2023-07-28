@@ -1,16 +1,18 @@
-.header-container{
+.header-container {
   background-image: url(/assets/fondo.jpg);
   /* height: 80vh; */
   background-size: cover;
 }
-.principal-title{
-    color: white;
-    -webkit-text-stroke: 1.2px black;
-    
+
+.principal-title {
+  color: white;
+  font-family: 'Lobster', cursive;
+  -webkit-text-stroke: 1.2px black;
+
 }
 
-.hero{
+.hero {
   /* height: 80vh; */
   background: rgb(#00a9a5ff);
-  background: linear-gradient(270deg, rgb(31, 198, 227) 20%, rgba(255,255,255,0.26102941176470584) 65%);
+  background: linear-gradient(270deg, rgb(31, 198, 227) 20%, rgba(255, 255, 255, 0.26102941176470584) 65%);
 }
